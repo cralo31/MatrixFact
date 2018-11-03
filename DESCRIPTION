@@ -1,0 +1,12 @@
+Package: MatrixFact
+Type: Package
+Title: Algorithms for Non-negative Matrix Factorization 
+Version: 1.0
+Date: 2018-11-03
+Author: Jack Yutong Li
+Maintainer: <yutongli92@gmail.com>
+Description: This package performs 6 variations of the Non-negative Matrix Factorization method for matrices with either continuous or binary entries.
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.12.18), irlba, pracma
+LinkingTo: Rcpp, RcppArmadillo, irlba, pracma
+RoxygenNote: 6.1.0

@@ -1,0 +1,5 @@
+useDynLib(MatrixFact, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+import(irlba)
+import(pracma)

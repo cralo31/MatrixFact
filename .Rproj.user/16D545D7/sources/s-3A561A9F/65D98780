@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541279448134.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2703706591",
+    "id" : "65D98780",
+    "lastKnownWriteTime" : 1541279221,
+    "last_content_update" : 1541279221,
+    "path" : "C:/Users/yuton/Dropbox/packages/MatrixFact/src/RcppExports.cpp",
+    "project_path" : "src/RcppExports.cpp",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}
