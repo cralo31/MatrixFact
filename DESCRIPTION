@@ -10,3 +10,7 @@ License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.18), irlba, pracma
 LinkingTo: Rcpp, RcppArmadillo, irlba, pracma
 RoxygenNote: 6.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
