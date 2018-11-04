@@ -32,11 +32,11 @@ List NMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const dou
     
     i_e += 1;
     
-    // Update G
+    // Update G using multiplicative updates
     G = ((X.t() * F_p) / (G_p * F_p.t() * F_p + eps)) % G_p;
     G_p = G;
     
-    // Update F
+    // Update F using multiplicative updates
     F = F_p % ((X * G) / (F_p * G.t() * G + eps));
     F_p = F;
     
@@ -49,6 +49,7 @@ List NMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const dou
   
   }
   
+  // Enforce all values less than a certain threshold to be 0.
   F(find(F == eps)).fill(0);
   G(find(G == eps)).fill(0);
   

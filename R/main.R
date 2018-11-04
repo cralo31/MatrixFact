@@ -2,7 +2,7 @@
 ################################ Main Function to Perform NMF ############################
 
 #' 
-#' Algorithms for Non-negative Matrix Factorization 
+#' Algorithms for Nonnegative Matrix Factorization 
 #' 
 #' Function to apply various methods of NMF on the input matrix for both continuous and binary entries.
 #' 
@@ -14,20 +14,23 @@
 #' @param X Matrix; An n-by-p matrix with either continous or binary entries.
 #' @param mode Integer; Define the type of the input matrix. 1 for continuous, 2 for binary.
 #' @param k Clusters; Number of clusters / factors to solve for. Must not exceed the minimum of n or p.
-#' @param method String; Determine which NMF algorithm to use. Choices include "nmf", "onmf", "semi", "sonmf" for
-#' continuous matrices and "so_bin", "log_bin" for binary matrices. Defaults to "nmf".
-#' @param init String; Determine the type of initialization to use. Choices include "random", "kmeans", and "svd".
+#' @param method String; Determine which NMF algorithm to use. Choices include 'nmf', 'onmf', 'semi', 'sonmf' for
+#' continuous matrices and "so_bin", "log_bin" for binary matrices. Defaults to 'nmf'.
+#' @param init String; Determine the type of initialization to use. Choices include 'random', 'kmeans', and 'svd'. Defaults to 'random'.
 #' @param iter Integer; Number of iterations to run. Defaults to 200. 
 #' @param tol Double; Stop the algorithm when the difference between two iterations is less than this specified 
 #' threshold. Defaults to 1e-5.
 #' @param tau Double; Initial step size for the line search algorithm in sonmf. Defaults to 0.5.
 #' @param step_bin Double; Step size for the update algorithm in binary SONMF. Defaults to 0.05.
-#' @param step_log Double; Step size for both gradient descent update for logNMF. Defaults to 0.001. This value should be tuned with caution,
+#' @param step_log Double; Step size for both gradient descent updates for logNMF. Defaults to 0.001. This value should be tuned with caution,
 #' as convergence performance is rather unstable. Recommend to leave it as default.
 #' @param factor Double; The factor in which the step size in sonmf is increased/decreased during the line search. Defaults to 2.
 #' @param sparse_svd Boolean; Determine whether to use the exact SVD decomposition from \code{svd()} or the fast-truncated SVD 
-#' from \code{irlba} for 'svd' initialization.
+#' from \code{irlba()} for 'svd' initialization.
 #' @param seed Integer; Set seed for reproducibility. Defaults to no seed set.
+#' 
+#' @details The Non-negative Matrix Factorization aims to factorize/approximate a target matrix X as the product of two lower-rank
+#' matrices, F and G. 
 #' 
 #' @return A \code{MatrixFact} object; a list consisting of
 #' \item{F}{The final F matrix}
@@ -36,8 +39,8 @@
 #' \item{final_res}{A vector with the final factorized residual and orthogonal residual(if applicable) and the number
 #' of iterations}
 #' 
-#' @references Lee, D. D., & Seung, H. S. (1999). Learning the parts of objects by non-negative matrix factorization. Nature, 401(6755), 788.
-#' DOI: \url{https://doi.org/10.1038/44565}.
+#' @references Lee, D. D., & Seung, H. S. (2001). Algorithms for non-negative matrix factorization. In Advances in neural information processing systems (pp. 556-562).
+#' DOI: \url{http://papers.nips.cc/paper/1861-algorithms-for-non-negative-matrix-factorization}.
 #' @references Ding, C. H., Li, T., & Jordan, M. I. (2010). Convex and semi-nonnegative matrix factorizations. IEEE transactions on pattern analysis and machine intelligence, 32(1), 45-55.
 #' DOI: \url{http://dx.doi.org/10.1109/TPAMI.2008.277}
 #' @references Wen, Z. and Yin, W., "A feasible method for optimization with orthogonality constraints." Mathematical Programming 142.1-2 (2013): 397-434.
@@ -54,7 +57,7 @@
 #' 
 #' ### Create an arbitrary 100-by-100 non-negative matrix to factorize. ###
 #' 
-#' # Regular NMF #
+#' # Run Regular NMF with random initialization #
 #' 
 #' n = 100 
 #' X = matrix(rnorm(n * n, 0, 1), n, n)
@@ -68,14 +71,14 @@
 #' 
 #' result.1 = nmf.main(X, mode, k, method, init, iter, tol)
 #' 
-#' # Semi-orthogonal NMF using the same X as above #
+#' # Run SONMF with SVD initialization using the same X as above #
 #' 
 #' method = "sonmf"
 #' init = "svd"
 #' 
 #' result.2 = nmf.main(X, mode, k, method, init, iter, tol)
 #' 
-#' # semi-orthogonal NMF for binary X.
+#' # Run binary SONMF with SVD initialization for binary X.
 #' 
 #' n = 100
 #' X = matrix(rbinom(n^2, 1, runif(n^2, 0.25, 0.75)), n, n)  
