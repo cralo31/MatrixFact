@@ -6,6 +6,9 @@
 #' 
 #' Function to apply various methods of NMF on the input matrix for both continuous and binary entries.
 #' 
+#' @useDynLib MatrixFact, .registration = TRUE
+#' @importFrom Rcpp evalCpp
+#' @import pracma
 #' @import irlba
 #' 
 #' @param X Matrix; An n-by-p matrix with either continous or binary entries.
@@ -85,6 +88,7 @@
 #' 
 #' result.3 = nmf.main(X, mode, k, method, init, iter, tol)
 #' 
+#' @export
 
 nmf.main = function(X, mode = 1, k, method = "nmf", init = "random", iter = 200, tol = 1e-5, tau = 0.1, 
                     step_bin = 0.05, step_log = 0.001, factor = 2, sparse_svd = TRUE, seed = 0) {
@@ -209,7 +213,6 @@ nmf.main = function(X, mode = 1, k, method = "nmf", init = "random", iter = 200,
 #' Outputs error and warning messages
 
 #' This function examines the input parameters and output corresponding error or warning message.
-#' 
 
 error.mess = function(X, mode, k, method, init, iter, tol, tau, step_bin, step_log, seed) {
   
@@ -290,7 +293,8 @@ error.mess = function(X, mode, k, method, init, iter, tol, tau, step_bin, step_l
   }
 }
 
-### Reorganize result from NMF and returns an NMF object ###
+###########################################################
+#' Reorganize result from NMF and returns an NMF object 
 
 organize = function(method, nmf.res) {
   
