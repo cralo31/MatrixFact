@@ -208,11 +208,10 @@ nmf.main = function(X, mode = 1, k, method = "nmf", init = "random", iter = 200,
 }
 
 #############################################################
-#' Error function 
-#' 
-#' Outputs error and warning messages
-
-#' This function examines the input parameters and output corresponding error or warning message.
+# Error function 
+# 
+# Outputs error and warning messages
+# This function examines the input parameters and output corresponding error or warning message.
 
 error.mess = function(X, mode, k, method, init, iter, tol, tau, step_bin, step_log, seed) {
   
@@ -294,7 +293,7 @@ error.mess = function(X, mode, k, method, init, iter, tol, tau, step_bin, step_l
 }
 
 ###########################################################
-#' Reorganize result from NMF and returns an NMF object 
+# Reorganize result from NMF and returns an NMF object 
 
 organize = function(method, nmf.res) {
   
