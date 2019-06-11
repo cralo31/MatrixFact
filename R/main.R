@@ -145,6 +145,9 @@ nmf.main = function(X, mode = 1, k, method = "nmf", init = "random", iter = 200,
     G.init = t(X) %*% F.init
   }
   
+  F.init = as.matrix(F.init)
+  G.init = as.matrix(G.init)
+  
   # Continuous Matrix 
   if (mode == 1) {
     
@@ -328,7 +331,12 @@ organize = function(method, nmf.res) {
 ############################################################
 #' Function Specific for Binary Simulation
 #' 
-#' Function to apply various methods of NMF on the input matrix for both continuous and binary entries.
+#' This function is for simulation purposes only.
+#' 
+#' This function is the same as nmf.main(), with the additional parameter of an input
+#' true probability matrix for simulation purpose. This is not applicable in actual
+#' scenarios, since there is no way of knowing the true underlying probability matrix
+#' beforehand.
 #' 
 #' @useDynLib MatrixFact, .registration = TRUE
 #' @importFrom Rcpp evalCpp

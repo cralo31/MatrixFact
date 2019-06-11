@@ -8,5 +8,11 @@ bin.test(X, k, F.init, G.init, method, prob, iter = 500, tol = 1e-05,
   tau = 0.5, step_bin = 0.05, step_log = 0.001, factor = 2)
 }
 \description{
-Function to apply various methods of NMF on the input matrix for both continuous and binary entries.
+This function is for simulation purposes only.
+}
+\details{
+This function is the same as nmf.main(), with the additional parameter of an input
+true probability matrix for simulation purpose. This is not applicable in actual
+scenarios, since there is no way of knowing the true underlying probability matrix
+beforehand.
 }
