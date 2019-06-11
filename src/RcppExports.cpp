@@ -22,41 +22,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// lognmf
-List lognmf(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter, double tau, double step);
-RcppExport SEXP _MatrixFact_lognmf(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP, SEXP tauSEXP, SEXP stepSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
-    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
-    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
-    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
-    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
-    Rcpp::traits::input_parameter< double >::type step(stepSEXP);
-    rcpp_result_gen = Rcpp::wrap(lognmf(X, k, F_init, G_init, error, iter, tau, step));
-    return rcpp_result_gen;
-END_RCPP
-}
-// NMF_LOG
-List NMF_LOG(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter, double step);
-RcppExport SEXP _MatrixFact_NMF_LOG(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP, SEXP stepSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
-    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
-    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
-    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
-    Rcpp::traits::input_parameter< double >::type step(stepSEXP);
-    rcpp_result_gen = Rcpp::wrap(NMF_LOG(X, k, F_init, G_init, error, iter, step));
-    return rcpp_result_gen;
-END_RCPP
-}
 // ONMF
 List ONMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter);
 RcppExport SEXP _MatrixFact_ONMF(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP) {
@@ -70,22 +35,6 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
     Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
     rcpp_result_gen = Rcpp::wrap(ONMF(X, k, F_init, G_init, error, iter));
-    return rcpp_result_gen;
-END_RCPP
-}
-// SemiNMF
-List SemiNMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter);
-RcppExport SEXP _MatrixFact_SemiNMF(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
-    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
-    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
-    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(SemiNMF(X, k, F_init, G_init, error, iter));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -126,15 +75,106 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// SemiNMF
+List SemiNMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter);
+RcppExport SEXP _MatrixFact_SemiNMF(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
+    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
+    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
+    rcpp_result_gen = Rcpp::wrap(SemiNMF(X, k, F_init, G_init, error, iter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// lognmf
+List lognmf(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter, double tau, double step);
+RcppExport SEXP _MatrixFact_lognmf(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP, SEXP tauSEXP, SEXP stepSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
+    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
+    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< double >::type step(stepSEXP);
+    rcpp_result_gen = Rcpp::wrap(lognmf(X, k, F_init, G_init, error, iter, tau, step));
+    return rcpp_result_gen;
+END_RCPP
+}
+// log_test
+List log_test(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, arma::mat prob_t, const double error, const int iter, double step);
+RcppExport SEXP _MatrixFact_log_test(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP prob_tSEXP, SEXP errorSEXP, SEXP iterSEXP, SEXP stepSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type prob_t(prob_tSEXP);
+    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
+    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< double >::type step(stepSEXP);
+    rcpp_result_gen = Rcpp::wrap(log_test(X, k, F_init, G_init, prob_t, error, iter, step));
+    return rcpp_result_gen;
+END_RCPP
+}
+// NMF_LOG
+List NMF_LOG(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const double error, const int iter, double step);
+RcppExport SEXP _MatrixFact_NMF_LOG(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP errorSEXP, SEXP iterSEXP, SEXP stepSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
+    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
+    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< double >::type step(stepSEXP);
+    rcpp_result_gen = Rcpp::wrap(NMF_LOG(X, k, F_init, G_init, error, iter, step));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sobin_test
+List sobin_test(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, arma::mat prob_t, const double error, const int iter, double tau, const int factor, double step);
+RcppExport SEXP _MatrixFact_sobin_test(SEXP XSEXP, SEXP kSEXP, SEXP F_initSEXP, SEXP G_initSEXP, SEXP prob_tSEXP, SEXP errorSEXP, SEXP iterSEXP, SEXP tauSEXP, SEXP factorSEXP, SEXP stepSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type F_init(F_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type G_init(G_initSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type prob_t(prob_tSEXP);
+    Rcpp::traits::input_parameter< const double >::type error(errorSEXP);
+    Rcpp::traits::input_parameter< const int >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< const int >::type factor(factorSEXP);
+    Rcpp::traits::input_parameter< double >::type step(stepSEXP);
+    rcpp_result_gen = Rcpp::wrap(sobin_test(X, k, F_init, G_init, prob_t, error, iter, tau, factor, step));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_MatrixFact_NMF", (DL_FUNC) &_MatrixFact_NMF, 6},
-    {"_MatrixFact_lognmf", (DL_FUNC) &_MatrixFact_lognmf, 8},
-    {"_MatrixFact_NMF_LOG", (DL_FUNC) &_MatrixFact_NMF_LOG, 7},
     {"_MatrixFact_ONMF", (DL_FUNC) &_MatrixFact_ONMF, 6},
-    {"_MatrixFact_SemiNMF", (DL_FUNC) &_MatrixFact_SemiNMF, 6},
     {"_MatrixFact_SO_BIN3", (DL_FUNC) &_MatrixFact_SO_BIN3, 9},
     {"_MatrixFact_SO_NMF", (DL_FUNC) &_MatrixFact_SO_NMF, 8},
+    {"_MatrixFact_SemiNMF", (DL_FUNC) &_MatrixFact_SemiNMF, 6},
+    {"_MatrixFact_lognmf", (DL_FUNC) &_MatrixFact_lognmf, 8},
+    {"_MatrixFact_log_test", (DL_FUNC) &_MatrixFact_log_test, 8},
+    {"_MatrixFact_NMF_LOG", (DL_FUNC) &_MatrixFact_NMF_LOG, 7},
+    {"_MatrixFact_sobin_test", (DL_FUNC) &_MatrixFact_sobin_test, 10},
     {NULL, NULL, 0}
 };
 

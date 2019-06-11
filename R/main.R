@@ -2,7 +2,7 @@
 ################################ Main Function to Perform NMF ############################
 
 #' 
-#' Algorithms for Nonnegative Matrix Factorization 
+#' Algorithms for Nonnegative Matrix Factorization (Vanilla)
 #' 
 #' Function to apply various methods of NMF on the input matrix for both continuous and binary entries.
 #' 
@@ -140,7 +140,7 @@ nmf.main = function(X, mode = 1, k, method = "nmf", init = "random", iter = 200,
     if (sparse_svd) { svd.X = irlba(as.matrix(X), nu = k, nv = k) } else { svd.X = svd(as.matrix(X), nu = k, nv = k) }
     
     # Set up F init, force to be the same sign for consistency
-    if (svd.X$u[1,1] > 0) {F.init = svd.X$u[,1:k] * -1} else {F.init = svd.X$u[,1:k]}
+    if (svd.X$u[1,1] < 0) {F.init = svd.X$u[,1:k] * -1} else {F.init = svd.X$u[,1:k]}
     
     G.init = t(X) %*% F.init
   }
@@ -324,5 +324,29 @@ organize = function(method, nmf.res) {
   
   return(res)
 }  
+
+############################################################
+#' Function Specific for Binary Simulation
+#' 
+#' Function to apply various methods of NMF on the input matrix for both continuous and binary entries.
+#' 
+#' @useDynLib MatrixFact, .registration = TRUE
+#' @importFrom Rcpp evalCpp
+#' @import pracma
+#' @import irlba
+#' 
+#' @export
+
+bin.test = function(X, k, F.init, G.init, method, prob, iter = 500, tol = 1e-5, tau = 0.5, 
+                    step_bin = 0.05, step_log = 0.001, factor = 2) {
   
+  if (method == "so_bin") {
+    res = sobin_test(X, k, F.init, G.init, prob, tol, iter, tau, factor, step_bin)
+  } else if (method == "log_nmf") {
+    res = log_test(X, k, F.init, G.init, prob, tol, iter, step_log)
+  } else {
+    stop("Input method must be either 'so_bin' or 'log_nmf'.")
+  }
+  return (res)
+}
   

@@ -17,7 +17,7 @@ List SO_NMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const 
   double prev_mse, temp_mse;
   int count = 1, i_e = 0, counter;
   double eps = 0, tol = 1;
-  arma::mat C, D, FG, F_new, R, FG_temp, U, V, info;
+  arma::mat C, D, FG, F_new, R, FG_temp, U, V, info, V_U, V_F;
   arma::mat I = eye(k, k);
   arma::mat I_2 = eye(2*k, 2*k);
   arma::vec one = ones<vec>(k);
@@ -55,8 +55,10 @@ List SO_NMF(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, const 
     // Find orthogonal Q via Crank-Nicolson, then use Q to project onto original F_1
     // to create corrected columns
     counter = 0;
+    V_U = V.t() * U;
+    V_F = V.t() * F;
     while (tol < 0 || counter == 0) {
-      F_new = F - U * inv(I_2 + V.t() * U * tau/2) * V.t() * F * tau;
+      F_new = F - U * inv(I_2 + V_U * tau/2) * V_F * tau;
       FG_temp = F_new * G.t();
       temp_mse = accu(square(X - FG_temp)) / X.size();
       tol = prev_mse - temp_mse;

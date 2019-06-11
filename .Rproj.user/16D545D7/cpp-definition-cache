@@ -3,6 +3,141 @@
         "definitions" : [
             {
                 "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/Lee_NMF.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "NMF(arma::mat, const int, arma::mat, arma::mat, const double, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@NMF#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/Lee_NMF.cpp",
+        "file_last_write" : 1541291927
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/ONMF.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "ONMF(arma::mat, const int, arma::mat, arma::mat, const double, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@ONMF#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/ONMF.cpp",
+        "file_last_write" : 1537299833
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/SO_Bin3.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "SO_BIN3(arma::mat, const int, arma::mat, arma::mat, const double, const int, double, const int, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@SO_BIN3#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#d#1I#d#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/SO_Bin3.cpp",
+        "file_last_write" : 1558815776
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/SO_NMF.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "SO_NMF(arma::mat, const int, arma::mat, arma::mat, const double, const int, double, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@SO_NMF#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#d#1I#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/SO_NMF.cpp",
+        "file_last_write" : 1558812526
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/SemiNMF.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "SemiNMF(arma::mat, const int, arma::mat, arma::mat, const double, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@SemiNMF#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/SemiNMF.cpp",
+        "file_last_write" : 1537299842
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/lognmf.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "lognmf(arma::mat, const int, arma::mat, arma::mat, const double, const int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@lognmf#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#d#d#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/lognmf.cpp",
+        "file_last_write" : 1539833003
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/lognmf_test.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "log_test(arma::mat, const int, arma::mat, arma::mat, arma::mat, const double, const int, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@log_test#$@N@arma@C@Mat>#d#1I#S0_#S0_#S0_#1d#1I#d#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/lognmf_test.cpp",
+        "file_last_write" : 1540087950
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/nmf_log.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "NMF_LOG(arma::mat, const int, arma::mat, arma::mat, const double, const int, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@NMF_LOG#$@N@arma@C@Mat>#d#1I#S0_#S0_#1d#1I#d#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/nmf_log.cpp",
+        "file_last_write" : 1539828651
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/sobin_test.cpp",
+                "kind" : 6,
+                "line" : 11,
+                "name" : "sobin_test(arma::mat, const int, arma::mat, arma::mat, arma::mat, const double, const int, double, const int, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sobin_test#$@N@arma@C@Mat>#d#1I#S0_#S0_#S0_#1d#1I#d#1I#d#"
+            }
+        ],
+        "file" : "C:/Users/yuton/Dropbox/Jack Li/JASA Submission/MatrixFact/src/sobin_test.cpp",
+        "file_last_write" : 1540087996
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
                 "file" : "C:/Users/yuton/Dropbox/packages/MatrixFact/src/Lee_NMF.cpp",
                 "kind" : 6,
                 "line" : 11,
@@ -12,7 +147,7 @@
             }
         ],
         "file" : "C:/Users/yuton/Dropbox/packages/MatrixFact/src/Lee_NMF.cpp",
-        "file_last_write" : 1536861021
+        "file_last_write" : 1541291927
     },
     {
         "definitions" : [

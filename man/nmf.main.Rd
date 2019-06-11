@@ -2,10 +2,10 @@
 % Please edit documentation in R/main.R
 \name{nmf.main}
 \alias{nmf.main}
-\title{Algorithms for Nonnegative Matrix Factorization}
+\title{Algorithms for Nonnegative Matrix Factorization (Vanilla)}
 \usage{
 nmf.main(X, mode = 1, k, method = "nmf", init = "random",
-  iter = 200, tol = 0.00001, tau = 0.1, step_bin = 0.05,
+  iter = 200, tol = 1e-05, tau = 0.1, step_bin = 0.05,
   step_log = 0.001, factor = 2, sparse_svd = TRUE, seed = 0)
 }
 \arguments{

@@ -5,20 +5,8 @@ NMF <- function(X, k, F_init, G_init, error, iter) {
     .Call(`_MatrixFact_NMF`, X, k, F_init, G_init, error, iter)
 }
 
-lognmf <- function(X, k, F_init, G_init, error, iter, tau, step) {
-    .Call(`_MatrixFact_lognmf`, X, k, F_init, G_init, error, iter, tau, step)
-}
-
-NMF_LOG <- function(X, k, F_init, G_init, error, iter, step) {
-    .Call(`_MatrixFact_NMF_LOG`, X, k, F_init, G_init, error, iter, step)
-}
-
 ONMF <- function(X, k, F_init, G_init, error, iter) {
     .Call(`_MatrixFact_ONMF`, X, k, F_init, G_init, error, iter)
-}
-
-SemiNMF <- function(X, k, F_init, G_init, error, iter) {
-    .Call(`_MatrixFact_SemiNMF`, X, k, F_init, G_init, error, iter)
 }
 
 SO_BIN3 <- function(X, k, F_init, G_init, error, iter, tau, factor, step) {
@@ -27,5 +15,25 @@ SO_BIN3 <- function(X, k, F_init, G_init, error, iter, tau, factor, step) {
 
 SO_NMF <- function(X, k, F_init, G_init, error, iter, tau, factor) {
     .Call(`_MatrixFact_SO_NMF`, X, k, F_init, G_init, error, iter, tau, factor)
+}
+
+SemiNMF <- function(X, k, F_init, G_init, error, iter) {
+    .Call(`_MatrixFact_SemiNMF`, X, k, F_init, G_init, error, iter)
+}
+
+lognmf <- function(X, k, F_init, G_init, error, iter, tau, step) {
+    .Call(`_MatrixFact_lognmf`, X, k, F_init, G_init, error, iter, tau, step)
+}
+
+log_test <- function(X, k, F_init, G_init, prob_t, error, iter, step) {
+    .Call(`_MatrixFact_log_test`, X, k, F_init, G_init, prob_t, error, iter, step)
+}
+
+NMF_LOG <- function(X, k, F_init, G_init, error, iter, step) {
+    .Call(`_MatrixFact_NMF_LOG`, X, k, F_init, G_init, error, iter, step)
+}
+
+sobin_test <- function(X, k, F_init, G_init, prob_t, error, iter, tau, factor, step) {
+    .Call(`_MatrixFact_sobin_test`, X, k, F_init, G_init, prob_t, error, iter, tau, factor, step)
 }
 

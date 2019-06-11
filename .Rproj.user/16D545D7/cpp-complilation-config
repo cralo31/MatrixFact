@@ -3,10 +3,12 @@
         "-IE:/R/RStudio/resources/libclang/builtin-headers/3.4",
         "-IC:/Users/yuton/Documents/R/win-library/3.5/Rcpp/include",
         "-IC:/Users/yuton/Documents/R/win-library/3.5/RcppArmadillo/include",
-        "-IC:/PROGRA~1/R/R-35~1.1/include",
-        "-DNDEBUG"
+        "-std=gnu++11",
+        "-IC:/PROGRA~1/R/R-35~1.3/include",
+        "-DNDEBUG",
+        "-fopenmp"
     ],
-    "hash" : "1541278984",
+    "hash" : "154129465615412789841541278984",
     "is_cpp" : true,
     "pch" : "Rcpp"
 }

@@ -8,17 +8,17 @@ using namespace std;
 using namespace arma;
 
 // [[Rcpp::export]]
-List SO_BIN3(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, 
+List sobin_test(arma::mat X, const int k, arma::mat F_init, arma::mat G_init, arma::mat prob_t,
              const double error, const int iter, double tau, const int factor, double step) 
 {
   //___________________ Initialization ___________________
   arma::mat F = F_init;
   arma::mat G_p = G_init;
-  arma::vec tempG, all_cost(iter), all_tol(iter), all_orth(iter), all_tau(iter), all_counter(iter);
+  arma::vec tempG, all_cost(iter), all_tol(iter), all_orth(iter), all_tau(iter), all_counter(iter), all_prob(iter);
   double prev_cost, temp_cost;
   int count = 1, i_e = 0, counter;
   double tol = 1;
-  arma::mat C, D, FG, F_new, R, FG_temp, U, V, nume, deno, G, info, V_U, V_F;
+  arma::mat C, D, FG, F_new, R, FG_temp, U, V, nume, deno, G, info;
   arma::mat I = eye(k, k);
   arma::mat I_2 = eye(2*k, 2*k);
   arma::mat one = ones<mat>(size(X));
@@ -33,6 +33,7 @@ List SO_BIN3(arma::mat X, const int k, arma::mat F_init, arma::mat G_init,
   all_tol(i_e) = 1;
   all_cost(i_e) = mean(mean(log(one + exp(FG)) - X % FG));
   all_orth(i_e) = accu((F.t() * F - I) % (F.t() * F - I));
+  all_prob(i_e) = sqrt(accu(square(one / (one + exp(-(FG))) - prob_t)));
   all_tau(i_e) = tau;
   all_counter(i_e) = 1;
   prev_cost = all_cost(0);
@@ -60,10 +61,8 @@ List SO_BIN3(arma::mat X, const int k, arma::mat F_init, arma::mat G_init,
     // Find orthogonal Q via Crank-Nicolson, then use Q to project onto original F_1
     // to create corrected columns
     counter = 0;
-    V_U = V.t() * U;
-    V_F = V.t() * F;
     while (tol < 0 || counter == 0) {
-      F_new = F - tau * U * inv(I_2 + tau/2 * V_U) * V_F;
+      F_new = F - tau * U * inv(I_2 + tau/2 * V.t() * U) * V.t() * F;
       FG_temp = F_new * G.t();
       temp_cost = mean(mean(log(one + exp(FG_temp)) - X % FG_temp));
       tol = prev_cost - temp_cost;
@@ -83,13 +82,15 @@ List SO_BIN3(arma::mat X, const int k, arma::mat F_init, arma::mat G_init,
     
     // Update probability and projection error
     FG = F * G.t();
+    all_prob(i_e) = sqrt(accu(square(one / (one + exp(-(FG))) - prob_t)));
     all_orth(i_e) = accu((F.t() * F - I) % (F.t() * F - I));
     count += 1;
     
   }
   
-  info = join_rows(all_tol, all_cost); info = join_rows(info, all_orth); info = join_rows(info, all_tau);
-  info = join_rows(info, all_counter);
+  info = join_rows(all_tol, all_cost);
+  info = join_rows(info, all_prob);
+  info = join_rows(info, all_orth); 
   
   return List::create(_["F"] = F, _["G"] = G, _["info"] = info, _["iter"] = count,
                       _["final_res"] = all_cost[i_e], _["final_ortho"] = all_orth[i_e]);
