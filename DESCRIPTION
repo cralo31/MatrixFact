@@ -1,7 +1,7 @@
 Package: MatrixFact
 Type: Package
 Title: Algorithms for Non-negative Matrix Factorization 
-Version: 1.1.1
+Version: 1.0.0
 Date: 2019-06-11
 Author: Yutong Li, Ruoqing Zhu, and Annie Qu
 Maintainer: Yutong Li <yutongli92@gmail.com>
