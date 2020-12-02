@@ -8,6 +8,8 @@ This R package is developed for the Semi-orthogonal Non-negative Matrix Factoriz
 First, install the "devtools" package from CRAN in order to install packages directly from Github. Next, simply execute "devtools::install_github('cralo31/MatrixFact') in an R console to download and install the package.
 
 # Example 
+It is recommended to run the following examples to have an idea of how SONMF works. 
+
 ```{r}
 n = 100 
 X = matrix(rnorm(n^2, 0, 1), n, n)   # Construct a 100-by-100 matrix with random elements
