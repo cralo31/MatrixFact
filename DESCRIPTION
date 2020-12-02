@@ -3,7 +3,7 @@ Type: Package
 Title: Algorithms for Non-negative Matrix Factorization 
 Version: 1.1.1
 Date: 2019-06-11
-Author: Yutong Li and Ruoqing Zhu
+Author: Yutong Li, Ruoqing Zhu, and Annie Qu
 Maintainer: Yutong Li <yutongli92@gmail.com>
 Description: This package performs 6 variations of the Non-negative Matrix Factorization method for matrices with either continuous or binary entries, such as the original NMF by Lee & Seung (1999) <DOI:10.1038/44565> and SONMF by Li et. al(2018) <arxiv.org/abs/1805.02306>.
 Encoding: UTF-8
