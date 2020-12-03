@@ -7,7 +7,7 @@ This R package is developed for the Semi-orthogonal Non-negative Matrix Factoriz
 # Installation
 Execute the following code in R to install the package.
 ```{r}
-# Need the "devtools" library to install packages from Github.
+# Need the "devtools" library to install packages from Github
 install.packages("devtools")
 
 # Install the "MatrixFact" library
