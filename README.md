@@ -5,7 +5,14 @@ R Package for SONMF and other NMF methods
 This R package is developed for the Semi-orthogonal Non-negative Matrix Factorization method proposed in the "Topic Modeling on Triage Notes with Semi-orthognal Non-negative Matrix Factorization" manuscript. 
 
 # Installation
-First, install the "devtools" package from CRAN in order to install packages directly from Github. Next, simply execute "devtools::install_github('cralo31/MatrixFact') in an R console to download and install the package.
+Execute the following code in R to install the package.
+```{r}
+# Need the "devtools" library to install packages from Github.
+install.packages("devtools")
+
+# Install the "MatrixFact" library
+devtools::install_github('cralo31/MatrixFact')
+```
 
 # Example 
 It is recommended to run the following examples to have an idea of how SONMF works. 
