@@ -2,7 +2,7 @@
 R Package for SONMF and other NMF methods
 
 # Description
-This R package is developed for the Semi-orthogonal Non-negative Matrix Factorization method proposed in the "Topic Modeling on Triage Notes with Semi-orthognal Non-negative Matrix Factorization" manuscript. 
+This R package is developed for the Semi-orthogonal Non-negative Matrix Factorization method proposed in the "Topic Modeling on Triage Notes with Semi-orthognal Non-negative Matrix Factorization" manuscript published in the Journal of the American Statistical Association. 
 
 # Installation
 Execute the following code in R to install the package.
