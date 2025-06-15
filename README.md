@@ -1,6 +1,8 @@
 # MatrixFact
 R Package for Semi-orthogonal Non-negative Matrix Factorization (SONMF) and other NMF methods
 
+Developer: Yutong Li (Novartis Pharmaceuticals)
+
 # Description
 This R package is developed for the Semi-orthogonal Non-negative Matrix Factorization method proposed in the "Topic Modeling on Triage Notes with Semi-orthognal Non-negative Matrix Factorization" manuscript published in the Journal of the American Statistical Association (link: https://www.tandfonline.com/doi/full/10.1080/01621459.2020.1862667). 
 
